@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta id="view" name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1">
+		<title>Countdown to Quitting Time</title>
+		<link rel="stylesheet" type="text/css" href="my_countdown.css">
+        <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.plugin.min.js"></script>
+        <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            var date = new Date(),
+                timezone = -date.getTimezoneOffset()/60,
+                year = date.getFullYear(),
+                month = parseInt(date.getMonth()),
+                date = date.getDate();
+            $('.my-countdown').countdown({
+                until: $.countdown.UTCDate(timezone, year, month, date, 17, 30, 0), // timezone, year, month, date, hours, minutes, seconds
+                padZeroes: true
+            });
+        });
+        </script>
+	</head>
+	<body>
+		<div id="world-premiere">
+            <div class="heading">
+                <h2>Countdown to</h2>
+                <h1>Quitting Time</h1>
+            </div>
+            <div class="my-countdown"></div>
+        </div>
+	</body>
+</html>
+<!-- http://keith-wood.name/countdown.html -->
